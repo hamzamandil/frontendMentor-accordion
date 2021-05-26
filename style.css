@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Text */
+    --veryDarkBlue: hsl(238, 29%, 16%);
+    --softRed: hsl(14, 88%, 65%);
+    --veryDarkGrayishBlue: hsl(237, 12%, 33%);
+    --darkGrayishBlue: hsl(240, 6%, 50%);
+
+    /* Dividers */
+    --lightGrayishBlue: hsl(240, 5%, 91%);
+
+    /* Gradient */
+    --softViolet: hsl(273, 75%, 66%);
+    --softBlue: hsl(240, 73%, 65%);
+}
+body {
+    min-height: 100vh;
+    font-family: 'Kumbh Sans', sans-serif;
+    font-size: 12px;
+    background-image: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+i {
+    color: var(--softRed);
+}
+.container {
+    width: 80%;
+    max-width: 1100px;
+    margin: auto;
+    background: linear-gradient(to top, var(--softBlue) 0%, var(--softViolet) 100%);
+    padding: 5rem 8rem;
+}
+
+.wrapper {
+    background-color: #fff;
+    box-shadow: 0px 12px 19px -6px rgba(0,0,0,0.3);
+    border-radius: 20px;
+    padding: 3rem 5rem 3rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+h1 {
+    font-size: 1.5rem;
+}
+.wrapper__image {
+    margin-left: -2.5rem;
+}
+.wrapper__content {
+    flex: 1;
+    margin-left: 2rem;
+}
+.wrapper__content h1 {
+    margin-bottom: 2rem;
+}
+
+.question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.question p {
+    color: var(--veryDarkGrayishBlue);
+}
+.active p {
+    font-weight: 700;
+    color: var(--veryDarkBlue);
+}
+
+.accordion {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--lightGrayishBlue);
+}
+.response {
+    display: none;
+}
+.response p {
+    color: var(--darkGrayishBlue);
+    margin: 1rem 0;
+    line-height: 1.6;
+}
+
+.active + .response {
+    display: block;
+}
+
+@media screen and (max-width: 1300px) {
+    .wrapper__image img {
+        width: 400px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .wrapper__image img {
+        width: 200px;
+    }
+}
+@media screen and (max-width: 769px) {
+    .container {
+        width: 100%;
+        padding: 7rem 0;
+    }
+    .wrapper {
+        max-width: 90%;
+        margin: 0 auto;
+        flex-direction: column;
+        padding: 3rem;
+        position: relative;
+        overflow: visible;
+    }
+    h1 {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .wrapper__content {
+        width: 90%;
+        margin: 3rem auto 0;
+    }
+    .wrapper__image {
+        position: absolute;
+        top: -5rem;
+    }
+}
